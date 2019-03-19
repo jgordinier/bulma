@@ -1,0 +1,17 @@
+{
+  "name": "bulma-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/app.scss css/app.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "linyan",
+  "license": "MIT",
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0"
+  }
+}

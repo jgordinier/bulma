@@ -8,11 +8,17 @@ $yellow: #FDBE41;
 $green: #35CB4B;
 $red: #FC635D;
 
+// $green: hsl(141, 75%, 55%);
+
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
 
+//section
+$section-padding: 1rem 0.5rem !default
 
 // Update some of Bulma's component variables
 $footer-padding: 0.5rem 1rem;
-
+//navbar > img
+$navbar-item-img-max-height: 2rem;
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-extensions/src/sass/index.sass";

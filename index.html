@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Bulma!</title>
+  <title>Tennis Hub</title>
   <link rel="stylesheet" href="css/app.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="./node_modules/bulma-extensions/src/js/index.js"></script>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -18,7 +19,7 @@
       <a class="navbar-item" href="#">
         <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28">
       </a>
-      <a class="navbar-item" href="#">臻和科技</a>
+      <a class="navbar-item is-size-4" href="#">Tennis Hub Jerry</a>
       <!-- burger menu -->
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
@@ -32,16 +33,62 @@
         <!-- debug css -->
         <a class="navbar-item" href='javascript:/* debug.css | MIT License | zaydek.github.com/debug.css */ if (!("is_debugging" in window)) { is_debugging = false; var debug_el = document.createElement("style"); debug_el.append(document.createTextNode(`*:not(path):not(g) { color: hsla(210, 100%, 100%, 0.9) !important; background: hsla(210, 100%,  50%, 0.5) !important; outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important; box-shadow: none !important; filter: none !important; }`)); } function enable_debugger() { if (!is_debugging) { document.head.appendChild(debug_el); is_debugging = true; } } function disable_debugger() { if (is_debugging) { document.head.removeChild(debug_el); is_debugging = false; } } !is_debugging ? enable_debugger() : disable_debugger();'>Debug
           Css</a>
+
+        <div class="navbar-item is-hidden-desktop">
+          <aside class="menu">
+            <span class="icon">
+              <i class="fas fa-home fa-lg"></i>
+            </span>
+            <p class="menu-label">
+              Dashboard
+            </p>
+            <ul class="menu-list">
+              <li><a class="is-active">Dashboard</a></li>
+              <li><a>场地</a></li>
+            </ul>
+            <p class="menu-label">
+              场地
+            </p>
+            <ul class="menu-list">
+              <li><a>Team Settings</a></li>
+              <li>
+                <a >Manage Your Team</a>
+                <ul>
+                  <li><a>会员</a></li>
+                  <li><a>统计</a></li>
+                  <li><a>Add a member</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="menu-label">
+              用户
+            </p>
+            <ul class="menu-list">
+              <li><a>Payments</a></li>
+            </ul>
+          </aside>
+        </div>
+
+        <a class="navbar-item" href="#">
+          <span class="icon has-badge-rounded has-badge-danger" data-badge="8">
+            <i class="fas fa-bell fa-lg"></i>
+          </span>
+        </a>
+
+        <a class="navbar-item" href="#">
+          <span class="icon has-badge-rounded has-badge-success"  data-badge="8">
+              <i class="fas fa-envelope fa-lg"></i>
+          </span>
+        </a>
+
         <div class="navbar-item has-dropdown is-hoverable border-radius">
-
           <a class="navbar-link" href="#">
-            <figure class="image is-24x24">
-              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
-
-            <strong>&nbsp;Admin</strong>
+              <figure class="image is-32x32  is-hidden-mobile">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+              <p class="is-hidden-desktop">Admin</p>
           </a>
-          <div class="navbar-dropdown is-boxed">
+          <div class="navbar-dropdown is-right is-boxed">
             <a class="navbar-item" href="#">
               修改密码
             </a>
@@ -51,55 +98,143 @@
             </a>
           </div>
         </div>
+
+
       </div>
     </div>
   </nav>
 
   <!-- main -->
-  <div class="columns is-fullheight">
+  <section class="section">
+    <div class="columns">
 
-    <div class="column is-narrow is-hidden-mobile ">
-      <aside class="menu box">
-        <p class="menu-label">
-          General
-        </p>
-        <ul class="menu-list">
-          <li><a>Dashboard</a></li>
-          <li><a>Customers</a></li>
-        </ul>
-        <p class="menu-label">
-          Administration
-        </p>
-        <ul class="menu-list">
-          <li><a>Team Settings</a></li>
-          <li>
-            <a class="is-active">Manage Your Team</a>
+      <div class="column is-narrow is-hidden-mobile">
+        <aside class="menu box">
+          <p class="menu-label ">
+            Dashboard
+          </p>
+          <ul class="menu-list">
+            <li><a class="is-active">Dashboard</a></li>
+          </ul>
+          <p class="menu-label">
+            场地
+          </p>
+          <ul class="menu-list">
+            <li><a>Team Settings</a></li>
+            <li>
+              <a >Manage Your Team</a>
+              <ul>
+                <li><a>会员</a></li>
+                <li><a>统计</a></li>
+                <li><a>Add a member</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p class="menu-label">
+            用户
+          </p>
+          <ul class="menu-list">
+            <li><a>Payments</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="column">
+        <div class="box">
+
+          <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-              <li><a>Members</a></li>
-              <li><a>Plugins</a></li>
-              <li><a>Add a member</a></li>
+              <li><a href="#">Dashboard</a></li>
             </ul>
-          </li>
-        </ul>
-        <p class="menu-label">
-          Transactions
-        </p>
-        <ul class="menu-list">
-          <li><a>Payments</a></li>
-        </ul>
-      </aside>
-    </div>
+          </nav>
 
-    <div class="column">
-      <nav class="breadcrumb box" aria-label="breadcrumbs">
-        <ul>
-          <li><a href="#">首页</a></li>
-          <li><a href="#">用户</a></li>
-          <li class="is-active"><a href="#" aria-current="page">添加</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+          <div class="columns has-text-centered">
+            <div class="column">
+              <div class="notification is-danger box">
+                  <div class="level">
+                    <div class="level-item">
+                      <span class="icon">
+                          <i class="fas fa-address-card fa-3x"></i>
+                      </span>
+                    </div>
+
+                    <div class="level-item">
+                      <div>
+                        <p class="heading">Students</p>
+                        <p class="title">3,456</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="notification is-warning box">
+                <div class="level">
+                  <div class="level-item fa-inverse">
+                    <span class="icon">
+                        <i class="fas fa-user-clock fa-3x"></i>
+                    </span>
+                  </div>
+                  <div class="level-item fa-inverse">
+                    <div>
+                      <p class="heading">Experience</p>
+                      <p class="title">3,456</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="notification is-success box">
+                <div class="level">
+                  <div class="level-item">
+                    <span class="icon">
+                        <i class="fas fa-clock fa-3x"></i>
+                    </span>
+                  </div>
+                  <div class="level-item">
+                    <div>
+                      <p class="heading">ClassHour</p>
+                      <p class="title">3,456</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="notification is-link box">
+                <div class="level">
+                  <div class="level-item">
+                    <span class="icon">
+                        <i class="fas fa-user-secret fa-3x"></i>
+                    </span>
+                  </div>
+                  <div class="level-item">
+                    <div>
+                      <p class="heading">Coachs</p>
+                      <p class="title">3,456</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <article class="message">
+            <div class="message-header">
+              <p>Hello World</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+          </article>
+
+        </div>
+      </div><!-- ./box -->
+
+    </div><!-- ./columns -->
+  </div><!-- ./section -->
 
   <!-- footer -->
   <footer class="footer">

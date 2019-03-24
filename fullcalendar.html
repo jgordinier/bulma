@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="css/app.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="./node_modules/chart.js/dist/Chart.js"></script>
+  <script src="./node_modules/@fullcalendar/core/main.js"></script>
+  <script src="./node_modules/@fullcalendar/daygrid/main.js"></script>
+  <script src="./node_modules/@fullcalendar/timegrid/main.js"></script>
+  <script src="./node_modules/@fullcalendar/list/main.js"></script>
+  <script src="./node_modules/@fullcalendar/interaction/main.js"></script>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -46,11 +51,11 @@
             </ul>
 
             <p class="menu-label">
-              Venenes
+              Venues
             </p>
             <ul class="menu-list">
               <li><a>场地管理</a></li>
-              <li><a>快速约课</a></li>
+              <li><a>排课管理</a></li>
             </ul>
 
             <p class="menu-label">
@@ -146,15 +151,15 @@
             Dashboard
           </p>
           <ul class="menu-list">
-            <li><a class="is-active" href="index.html">仪表盘</a></li>
+            <li><a href="index.html">仪表盘</a></li>
           </ul>
 
           <p class="menu-label">
-            Venues
+            TennisCourt
           </p>
           <ul class="menu-list">
             <li><a href="courts.html">场地管理</a></li>
-            <li><a href="fullcalendar.html">排课管理</a></li>
+            <li><a href="#" class="is-active">排课管理</a></li>
           </ul>
 
           <p class="menu-label">
@@ -198,129 +203,35 @@
       <div class="column">
         <div class="box">
           <!-- breadcrumb -->
-          <!-- breadcrumb -->
           <div class="level is-marginless">
             <div class="level-left">
               <div class="level-item">
                 <nav class="breadcrumb" aria-label="breadcrumbs">
                   <ul>
-                      <li><a href="#">Home</a></li>
-                      <li class="is-active"><a href="#" aria-current="page">Dashboard</a></li>
+                      <li><a href="#">TennisCourt</a></li>
+                      <li><a href="#">Courses</a></li>
+                      <li class="is-active"><a href="#" aria-current="page">Calendar</a></li>
                   </ul>
                 </nav><!-- breadcrumb -->
               </div>
             </div>
+
+            <div class="level-right">
+              <div class="levle-item">
+
+              </div>
+            </div>
           </div>
           <hr class="navbar-divider">
-          <!-- total -->
-          <div class="columns has-text-centered">
-
-            <div class="column">
-              <div class="notification is-danger box">
-                  <div class="level">
-                    <div class="level-item">
-                      <span class="icon">
-                          <i class="fas fa-address-card fa-3x"></i>
-                      </span>
-                    </div>
-
-                    <div class="level-item">
-                      <div>
-                        <p class="heading">Students</p>
-                        <p class="title">3,456</p>
-                      </div>
-                    </div>
-                  </div>
+          <!-- calendar -->
+          <div class="columns">
+            <div class="column is-12">
+              <div class="box">
+                <div id='calendar'></div>
               </div>
             </div>
-
-            <div class="column">
-              <div class="notification is-warning box">
-                <div class="level">
-                  <div class="level-item fa-inverse">
-                    <span class="icon">
-                        <i class="fas fa-user-clock fa-3x"></i>
-                    </span>
-                  </div>
-                  <div class="level-item fa-inverse">
-                    <div>
-                      <p class="heading">Experience</p>
-                      <p class="title">3,456</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column">
-              <div class="notification is-success box">
-                <div class="level">
-                  <div class="level-item">
-                    <span class="icon">
-                        <i class="fas fa-clock fa-3x"></i>
-                    </span>
-                  </div>
-                  <div class="level-item">
-                    <div>
-                      <p class="heading">ClassHour</p>
-                      <p class="title">3,456</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column">
-              <div class="notification is-link box">
-                <div class="level">
-                  <div class="level-item">
-                    <span class="icon">
-                        <i class="fas fa-user-secret fa-3x"></i>
-                    </span>
-                  </div>
-                  <div class="level-item">
-                    <div>
-                      <p class="heading">Coachs</p>
-                      <p class="title">3,456</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- total -->
-          <!-- charts -->
-          <div class="columns has-text-centered">
-
-            <div class="column">
-              <div class="notification box">
-                <canvas id="myChart1"></canvas>
-              </div>
-            </div>
-
-            <div class="column">
-              <div class="notification box">
-                <canvas id="myChart2"></canvas>
-              </div>
-            </div>
-
           </div>
-
-          <div class="columns has-text-centered">
-
-            <div class="column">
-              <div class="notification box">
-                <canvas id="myChart3"></canvas>
-              </div>
-            </div>
-
-            <div class="column">
-              <div class="notification box">
-                <canvas id="myChart4"></canvas>
-              </div>
-            </div>
-
-          </div><!-- charts -->
-
+          <!-- calendar -->
         </div>
       </div>
 
@@ -338,71 +249,99 @@
     </div>
   </footer><!-- footer -->
 </body>
-<script src="./js/main.js"></script>
 <script>
-let ctx1 = document.getElementById('myChart1');
-let ctx2 = document.getElementById('myChart2');
-let ctx3 = document.getElementById('myChart3');
-let ctx4 = document.getElementById('myChart4');
-let data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-    }
-  ]
-}
+  document.addEventListener('DOMContentLoaded', function() {
 
-let options = {
-    scales: {
-      yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-      }]
-    }
-}
-const myChart1 = new Chart(ctx1, {
-    type: 'bar',
-    data: data,
-    options: options
-});
+  var calendarEl = document.getElementById('calendar');
 
-const myChart2 = new Chart(ctx2, {
-    type: 'bar',
-    data: data,
-    options: options
-});
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    locale: 'zh-cn',
+    plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list'],
+    defaultView: 'timeGridWeek',
+    defaultDate: '2019-03-07',
+    header: {
+      left: 'prev,next,today',
+      center: 'title',
+      right:'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    titleFormat:{
+      year: 'numeric', month: 'short',day:'2-digit'
+    },
+    buttonText:{
+      today:    '今天',
+      month:    '月',
+      week:     '周',
+      day:      '日',
+      list:     '列表'
+    },
+    contentHeight: 503,
+    columnHeaderFormat:{
+      weekday: 'short',
+      month: 'long',
+      day: 'numeric',
+      omitCommas: true
+    },
+    slotDuration: '01:00',//时间间隔
+    allDayText:'全天',
+    minTime: '07:00:00',//每天开始时间
+    nowIndicator: true,
+    selectable: true, //打开拖动可选
+    selectMirror: true,
+    select: function(selectionInfo) {
+      alert('Clicked on: ' + selectionInfo.startStr + selectionInfo.endStr);
+    },
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2019-03-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2019-03-07',
+        end: '2019-03-10'
+      },
+      {
+        groupId: '999',
+        title: 'Repeating Event',
+        start: '2019-03-09T16:00:00'
+      },
+      {
+        groupId: '999',
+        title: 'Repeating Event',
+        start: '2019-03-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2019-03-11',
+        end: '2019-03-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2019-03-12T10:30:00',
+        end: '2019-03-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2019-03-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2019-03-12T14:30:00'
+      },
+      {
+        title: 'Birthday Party',
+        start: '2019-03-13T07:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2019-03-28'
+      }
+    ]
+  });
 
-const myChart3 = new Chart(ctx3, {
-    type: 'bar',
-    data: data,
-    options: options
-});
-
-const myChart4 = new Chart(ctx4, {
-    type: 'bar',
-    data: data,
-    options: options
+  calendar.render();
 });
 </script>
-
+<script src="./js/main.js"></script>
 </html>

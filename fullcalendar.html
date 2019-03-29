@@ -218,7 +218,23 @@
 
             <div class="level-right">
               <div class="levle-item">
+                <div class="select">
+                  <select>
+                    <option>俱乐部一</option>
+                    <option>俱乐部二</option>
+                  </select>
+                </div>
 
+                <div class="select">
+                  <select>
+                    <option>场地一</option>
+                    <option>场地二</option>
+                    <option>场地三</option>
+                    <option>场地四</option>
+                    <option>场地五</option>
+                    <option>场地六</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -228,6 +244,73 @@
             <div class="column is-12">
               <div class="box">
                 <div id='calendar'></div>
+                <!-- event modal-->
+                <div id="modal-event" class="modal">
+                  <div class="modal-background"></div>
+                  <div class="modal-card">
+                    <header class="modal-card-head">
+                      <p class="modal-card-title">Event</p>
+                      <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                      <!-- Content ... -->
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">选择教练:</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field is-narrow is-grouped">
+                            <div class="control">
+                              <div class="select is-fullwidth">
+                                <select>
+                                  <option>王美丽</option>
+                                  <option>王二麻</option>
+                                  <option>张英俊</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="control">
+                              <a class="button is-primary is-hovered">Color</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">选择时间:</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="control">
+                            <div class="field has-addons">
+                              <p class="control">
+                                <a class="button is-white is-hovered">
+                                  <span id="event-start">上午10点</span>
+                                </a>
+                              </p>
+                              <p class="control">
+                                <a class="button is-white is-hovered">
+                                  <span>-></span>
+                                </a>
+                              </p>
+                              <p class="control">
+                                <a class="button is-white is-hovered">
+                                  <span id="event-end">上午12点</span>
+                                </a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </section>
+                    <footer class="modal-card-foot buttons is-right">
+                      <button class="button is-success">Save</button>
+                      <button class="button cancel">Cancel</button>
+                    </footer>
+                  </div>
+                </div><!-- modal-court -->
+
               </div>
             </div>
           </div>
@@ -287,8 +370,16 @@
     nowIndicator: true,
     selectable: true, //打开拖动可选
     selectMirror: true,
+    editable: true,
+    droppable: true,
     select: function(selectionInfo) {
-      alert('Clicked on: ' + selectionInfo.startStr + selectionInfo.endStr);
+      let modalEvent = document.getElementById('modal-event');
+      let start = document.getElementById('event-start');
+      let end = document.getElementById('event-end');
+      modalEvent.classList.add('is-active');
+      start.innerHTML = selectionInfo.start.toLocaleTimeString();
+      end.innerHTML = selectionInfo.end.toLocaleTimeString();
+      console.log(modalEvent)
     },
     events: [
       {

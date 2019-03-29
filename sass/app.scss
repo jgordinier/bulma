@@ -23,6 +23,15 @@ $dimensions: 16 24 32 48 64 96 128 192 256!default
 
 //navbar > img
 $navbar-item-img-max-height: 2rem;
+
+//Login
+.login{
+    background: url(http://www.tennishalle-rohr.de/wp-content/uploads/2017/05/ball.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+.box-login{
+    background-color: hsla(0, 0%, 80%, 0.3)!important;
+}
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma-extensions/src/sass/index.sass";
 @import "../node_modules/chart.js/dist/Chart.css";

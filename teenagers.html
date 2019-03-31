@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tennis Hub - Users</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="./node_modules/chart.js/dist/Chart.js"></script>
+
+</head>
+
+<body class="has-navbar-fixed-top">
+
+  <!-- header -->
+  <nav class="navbar is-fixed-top is-dark">
+    <!-- Logo -->
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28">
+      </a>
+      <!-- Hub name -->
+      <a class="navbar-item is-size-4" href="#">Tennis Hub Jerry</a>
+      <!-- burger menu -->
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a><!-- burger menu -->
+    </div><!-- Logo -->
+    <!-- navMenu -->
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- debug css -->
+        <a class="navbar-item" href='javascript:/* debug.css | MIT License | zaydek.github.com/debug.css */ if (!("is_debugging" in window)) { is_debugging = false; var debug_el = document.createElement("style"); debug_el.append(document.createTextNode(`*:not(path):not(g) { color: hsla(210, 100%, 100%, 0.9) !important; background: hsla(210, 100%,  50%, 0.5) !important; outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important; box-shadow: none !important; filter: none !important; }`)); } function enable_debugger() { if (!is_debugging) { document.head.appendChild(debug_el); is_debugging = true; } } function disable_debugger() { if (is_debugging) { document.head.removeChild(debug_el); is_debugging = false; } } !is_debugging ? enable_debugger() : disable_debugger();'>Debug
+          Css</a>
+
+        <div class="navbar-item is-hidden-desktop">
+          <aside class="menu">
+
+            <p class="menu-label ">
+              Dashboard
+            </p>
+            <ul class="menu-list">
+              <li><a class="is-active">仪表盘</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Venues
+            </p>
+            <ul class="menu-list">
+              <li><a>场地管理</a></li>
+              <li><a>排课管理</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Users
+            </p>
+            <ul class="menu-list">
+              <li><a>学员管理</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Coaches
+            </p>
+            <ul class="menu-list">
+              <li><a>教练管理</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Clubsa
+            </p>
+            <ul class="menu-list">
+              <li><a>俱乐部管理</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Permissions
+            </p>
+            <ul class="menu-list">
+              <li><a>角色管理</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Admins
+            </p>
+            <ul class="menu-list">
+              <li><a>管理员管理</a></li>
+
+            </ul>
+
+          </aside>
+        </div>
+
+        <a class="navbar-item" href="#">
+          <span class="icon has-badge-rounded has-badge-danger" data-badge="8">
+            <i class="fas fa-bell fa-lg"></i>
+          </span>
+          <span class="is-hidden-desktop">新提醒</span>
+        </a>
+
+        <a class="navbar-item" href="#">
+          <span class="icon has-badge-rounded has-badge-success"  data-badge="8">
+              <i class="fas fa-envelope fa-lg"></i>
+          </span>
+          <span class="is-hidden-desktop">新消息</span>
+        </a>
+
+        <div class="navbar-item dropdown is-hoverable border-radius">
+          <a class="navbar-link" href="#">
+              <figure class="image is-32x32  is-hidden-mobile">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+              <p class="is-hidden-desktop">Admin</p>
+          </a>
+          <div class="navbar-dropdown is-right is-boxed">
+            <a class="navbar-item" href="#">
+              <span class="icon">
+                  <i class="fas fa-user-cog"></i>
+              </span>
+              <span>修改密码</span>
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="login.html">
+              <span class="icon">
+                  <i class="fas fa-power-off"></i>
+              </span>
+              <span>退出登陆</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- navMenu -->
+
+  </nav><!-- header -->
+
+  <!-- section -->
+  <section class="section">
+    <!-- columns -->
+    <div class="columns box">
+      <!-- menu -->
+      <div class="column is-narrow is-hidden-mobile is-2">
+        <aside class="menu box">
+          <p class="menu-label ">
+            Dashboard
+          </p>
+          <ul class="menu-list">
+            <li><a href="index.html">仪表盘</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Venues
+          </p>
+          <ul class="menu-list">
+            <li><a href="venues.html">场地管理</a></li>
+            <li><a href="fullcalendar.html">快速约课</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Users
+          </p>
+          <ul class="menu-list">
+            <li><a href="#" class="is-active">学员管理</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Coaches
+          </p>
+          <ul class="menu-list">
+            <li><a href="coaches.html">教练管理</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Clubsa
+          </p>
+          <ul class="menu-list">
+            <li><a href="clubs.html">俱乐部管理</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Permissions
+          </p>
+          <ul class="menu-list">
+            <li><a href="premissions.html">角色管理</a></li>
+          </ul>
+
+          <p class="menu-label">
+            Admins
+          </p>
+          <ul class="menu-list">
+            <li><a href="admins.html">管理员管理</a></li>
+          </ul>
+
+        </aside>
+      </div>
+      <!-- menu -->
+
+      <!-- main -->
+      <div class="column">
+        <div class="box">
+          <!-- breadcrumb -->
+          <div class="level is-marginless">
+            <div class="level-left">
+              <div class="level-item">
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                  <ul>
+                      <li><a href="#">Users</a></li>
+                      <li class="is-active"><a href="#" aria-current="page">List</a></li>
+                  </ul>
+                </nav><!-- breadcrumb -->
+              </div>
+            </div>
+
+            <div class="level-right">
+              <div class="level-item">
+                <div class="select">
+                  <select>
+                    <option>俱乐部一</option>
+                    <option>俱乐部二</option>
+                  </select>
+                </div>
+              </div>
+              <div class="levle-item">
+                <a class="modal-button button is-link" data-target="modal-user-add" aria-haspopup="true">
+                <span class="icon is-small">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <span>Add</span>
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- breadcrumb -->
+
+          <!-- modal-court -->
+          <div id="modal-user-add" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Details</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <!-- Content ... -->
+                <div class="field">
+                  <label class="label">Avatar</label>
+                  <figure class="image is-128x128">
+                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+                  </figure>
+                </div>
+
+                <div class="field">
+                  <label class="label">Upload Image</label>
+                  <div class="file has-name is-left">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="file">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Club</label>
+                  <div class="control">
+                    <div class="select">
+                      <select class="is-hovered">
+                        <option>club1</option>
+                        <option>club2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Text input" value="张英俊">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Gender</label>
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="gender" checked>
+                      男
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="gender">
+                      女
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Age</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Text input" value="18">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Phone</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Text input" value="18345678876">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Level</label>
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="level" checked>
+                      1.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      1.5
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      2.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      2.5
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      3.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      3.5
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      4.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      4.5
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      5.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      5.5
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      6.0
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="level">
+                      7.0
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Description</label>
+                  <div class="control">
+                    <textarea class="textarea" placeholder="Textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</textarea>
+                  </div>
+                </div>
+
+              </section>
+              <footer class="modal-card-foot buttons is-right">
+                <button class="button is-success">Save</button>
+                <button class="button cancel">Cancel</button>
+              </footer>
+            </div>
+          </div>
+          <!-- modal-court -->
+
+          <!-- modal-delete -->
+          <div id="modal-delete" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">确定删除吗？</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <footer class="modal-card-foot buttons is-right">
+                <button class="button is-success">Delete</button>
+                <button class="button cancel">Cancel</button>
+              </footer>
+            </div>
+          </div>
+          <!-- modal-delete -->
+
+          <hr class="navbar-divider">
+
+          <!-- search -->
+          <div class="columns">
+            <div class="columns">
+
+            </div>
+          </div>
+          <!-- search -->
+
+          <!-- table -->
+          <div class="columns">
+            <div class="column">
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>等级</th>
+                    <th>课时</th>
+                    <th>电话</th>
+                    <th>俱乐部</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>等级</th>
+                    <th>课时</th>
+                    <th>电话</th>
+                    <th>俱乐部</th>
+                    <th>操作</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="#">张英俊</a></td>
+                    <td>男</td>
+                    <td>23</td>
+                    <td>1.0</td>
+                    <td>128小时</td>
+                    <td>14534456765</td>
+                    <td>Jerry</td>
+                    <td>
+                      <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-align-justify"></i>
+                        </span>
+                      </a>
+                      <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-pen"></i>
+                        </span>
+                      </a>
+                      <a class="button is-white modal-button" data-target="modal-delete" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-trash-alt"></i>
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="#">王美丽</a></td>
+                    <td>女</td>
+                    <td>33</td>
+                    <td>3.5</td>
+                    <td>128小时</td>
+                    <td>14534456765</td>
+                    <td>Jerry</td>
+                    <td>
+                      <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-align-justify"></i>
+                        </span>
+                      </a>
+                      <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-pen"></i>
+                        </span>
+                      </a>
+                      <a class="button is-white modal-button" data-target="modal-delete" aria-haspopup="true">
+                        <span class="icon">
+                          <i class="fas fa-trash-alt"></i>
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- table -->
+
+          <!-- pagination -->
+          <div class="columns">
+            <div class="column">
+              <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                <a class="pagination-previous">上一页</a>
+                <a class="pagination-next">下一页</a>
+                <ul class="pagination-list">
+                  <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                  <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                  <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <!-- pagination -->
+        </div>
+      </div>
+      <!-- main -->
+
+    </div>
+    <!-- columns -->
+  </section><!-- section -->
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer><!-- footer -->
+</body>
+<script src="./js/main.js"></script>
+</html>

@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tennis Hub - Users</title>
+  <title>Tennis Hub - Teenagers</title>
   <link rel="stylesheet" href="css/app.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="./node_modules/chart.js/dist/Chart.js"></script>
 
 </head>
 
@@ -163,7 +162,9 @@
             Users
           </p>
           <ul class="menu-list">
-            <li><a href="#" class="is-active">学员管理</a></li>
+              <li><a href="#" class="is-active">青少年</a></li>
+              <li><a href="adults.html">成年人</a></li>
+              <li><a href="non-members.html">非会员</a></li>
           </ul>
 
           <p class="menu-label">
@@ -208,6 +209,7 @@
                 <nav class="breadcrumb" aria-label="breadcrumbs">
                   <ul>
                       <li><a href="#">Users</a></li>
+                       <li><a href="#">Teenagers</a></li>
                       <li class="is-active"><a href="#" aria-current="page">List</a></li>
                   </ul>
                 </nav><!-- breadcrumb -->
@@ -407,8 +409,20 @@
 
           <!-- search -->
           <div class="columns">
-            <div class="columns">
-
+            <div class="column">
+              <div class="field is-grouped">
+                <p class="control">
+                 <input class="input" type="date" lang="zh_cn" data-display-mode="default" data-is-range="true" data-close-on-select="false">
+                </p>
+                <p class="control">
+                  <input class="input" type="text" placeholder="Find a repository">
+                </p>
+                <p class="control">
+                  <a class="button is-info">
+                    Search
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
           <!-- search -->
@@ -427,6 +441,7 @@
                     <th>课时</th>
                     <th>电话</th>
                     <th>俱乐部</th>
+                    <th>创建时间</th>
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -440,6 +455,7 @@
                     <th>课时</th>
                     <th>电话</th>
                     <th>俱乐部</th>
+                    <th>创建时间</th>
                     <th>操作</th>
                   </tr>
                 </tfoot>
@@ -450,9 +466,10 @@
                     <td>男</td>
                     <td>23</td>
                     <td>1.0</td>
-                    <td>128小时</td>
+                    <td>128h</td>
                     <td>14534456765</td>
                     <td>Jerry</td>
+                    <td>2019-03-31 15:13:45</td>
                     <td>
                       <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
                         <span class="icon">
@@ -477,9 +494,10 @@
                     <td>女</td>
                     <td>33</td>
                     <td>3.5</td>
-                    <td>128小时</td>
+                    <td>128h</td>
                     <td>14534456765</td>
                     <td>Jerry</td>
+                    <td>2019-03-31 15:13:45</td>
                     <td>
                       <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
                         <span class="icon">
@@ -543,4 +561,16 @@
   </footer><!-- footer -->
 </body>
 <script src="./js/main.js"></script>
+<script src="./node_modules/bulma-calendar/dist/js/bulma-calendar.js"></script>
+<script>
+    // Initialize all input of date type.
+    const calendars = bulmaCalendar.attach('[type="date"]');
+
+    //Loop on each calendar initialized
+    for(let i = 0; i < calendars.length; i++) { // Add listener to date:selected event calendars[i].on('date:selected',
+        date => {
+            console.log(date);
+        };
+    }
+</script>
 </html>

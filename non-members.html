@@ -4,11 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tennis Hub - Coaches</title>
+  <title>Tennis Hub - Non-members</title>
   <link rel="stylesheet" href="css/app.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="./node_modules/chart.js/dist/Chart.js"></script>
-
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -162,16 +161,16 @@
             Users
           </p>
           <ul class="menu-list">
-              <li><a href="teenagers.html">青少年</a></li>
-              <li><a href="adults.html">成年人</a></li>
-              <li><a href="non-members.html">非会员</a></li>
+            <li><a href="teenagers.html">青少年</a></li>
+            <li><a href="adults.html">成年人</a></li>
+            <li><a href="#" class="is-active">非会员</a></li>
           </ul>
 
           <p class="menu-label">
             Coaches
           </p>
           <ul class="menu-list">
-            <li><a href="#" class="is-active">教练管理</a></li>
+            <li><a href="coaches.html">教练管理</a></li>
           </ul>
 
           <p class="menu-label">
@@ -200,21 +199,20 @@
       <!-- main -->
       <div class="column">
         <div class="box">
-
           <div class="level is-marginless">
             <!-- breadcrumb -->
             <div class="level-left">
               <div class="level-item">
                 <nav class="breadcrumb" aria-label="breadcrumbs">
                   <ul>
-                      <li><a href="#">Coaches</a></li>
+                      <li><a href="#">Users</a></li>
+                       <li><a href="#">Non-members</a></li>
                       <li class="is-active"><a href="#" aria-current="page">List</a></li>
                   </ul>
                 </nav>
               </div>
             </div>
             <!-- breadcrumb -->
-
             <div class="level-right">
               <div class="level-item">
                 <div class="select">
@@ -226,16 +224,15 @@
               </div>
               <div class="levle-item">
                 <a class="modal-button button is-link" data-target="modal-user-add" aria-haspopup="true">
-                <span class="icon is-small">
-                  <i class="fas fa-plus"></i>
-                </span>
-                <span>Add</span>
-              </a>
+                  <span class="icon is-small">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                  <span>Add</span>
+                </a>
               </div>
             </div>
-
           </div>
-          <!-- modal-court -->
+          <!-- modal-user-add -->
           <div id="modal-user-add" class="modal">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -309,71 +306,11 @@
                     <input class="input" type="text" placeholder="Text input" value="18">
                   </div>
                 </div>
-                <div class="field">
-                  <label class="label">Color</label>
-                  <div class="control">
-                    <input class="input" type="color" placeholder="Text input" value="18">
-                  </div>
-                </div>
 
                 <div class="field">
                   <label class="label">Phone</label>
                   <div class="control">
                     <input class="input" type="text" placeholder="Text input" value="18345678876">
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label class="label">Level</label>
-                  <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="level" checked>
-                      1.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      1.5
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      2.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      2.5
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      3.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      3.5
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      4.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      4.5
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      5.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      5.5
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      6.0
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="level">
-                      7.0
-                    </label>
                   </div>
                 </div>
 
@@ -390,7 +327,8 @@
                 <button class="button cancel">Cancel</button>
               </footer>
             </div>
-          </div><!-- modal-court -->
+          </div>
+          <!-- modal-user-add -->
 
           <!-- modal-delete -->
           <div id="modal-delete" class="modal">
@@ -407,9 +345,8 @@
             </div>
           </div>
           <!-- modal-delete -->
-
           <hr class="navbar-divider">
-          <!-- search -->
+
           <div class="columns">
             <div class="column">
               <div class="field is-grouped">
@@ -430,8 +367,7 @@
               </div>
             </div>
           </div>
-          <!-- search -->
-          <!-- venues -->
+
           <div class="columns">
 
             <div class="column">
@@ -443,9 +379,10 @@
                     <th>性别</th>
                     <th>年龄</th>
                     <th>等级</th>
+                    <th>课时</th>
                     <th>电话</th>
-                    <th>颜色</th>
                     <th>俱乐部</th>
+                    <th>创建时间</th>
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -456,9 +393,10 @@
                     <th>性别</th>
                     <th>年龄</th>
                     <th>等级</th>
+                    <th>课时</th>
                     <th>电话</th>
-                    <th>颜色</th>
                     <th>俱乐部</th>
+                    <th>创建时间</th>
                     <th>操作</th>
                   </tr>
                 </tfoot>
@@ -469,9 +407,10 @@
                     <td>男</td>
                     <td>23</td>
                     <td>1.0</td>
+                    <td>150h</td>
                     <td>14534456765</td>
-                    <td><span class="tag is-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
                     <td>Jerry</td>
+                    <td>2019-03-31 15:13:45</td>
                     <td>
                       <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
                         <span class="icon">
@@ -496,9 +435,10 @@
                     <td>女</td>
                     <td>33</td>
                     <td>3.5</td>
+                    <td>150h</td>
                     <td>14534456765</td>
-                    <td><span class="tag is-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
                     <td>Jerry</td>
+                    <td>2019-03-31 15:13:45</td>
                     <td>
                       <a class="button is-white modal-button" data-target="modal-user-add" aria-haspopup="true">
                         <span class="icon">
@@ -539,13 +479,14 @@
                 </ul>
               </nav>
             </div>
-          </div><!-- venues -->
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
     <!-- columns -->
   </section>
-<!-- section -->
+  <!-- section -->
   <!-- footer -->
   <footer class="footer">
     <div class="content has-text-centered">

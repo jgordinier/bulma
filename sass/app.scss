@@ -24,14 +24,6 @@ $dimensions: 16 24 32 48 64 96 128 192 256!default
 //navbar > img
 $navbar-item-img-max-height: 2rem;
 
-//Login
-.login{
-    background: url(http://www.tennishalle-rohr.de/wp-content/uploads/2017/05/ball.jpg) no-repeat center fixed;
-    background-size: cover;
-}
-.box-login{
-    background-color: hsla(0, 0%, 80%, 0.3)!important;
-}
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma-extensions/src/sass/index.sass";
 @import "../node_modules/chart.js/dist/Chart.css";
@@ -39,3 +31,40 @@ $navbar-item-img-max-height: 2rem;
 @import "../node_modules/@fullcalendar/daygrid/main.css";
 @import "../node_modules/@fullcalendar/timegrid/main.css";
 @import "../node_modules/@fullcalendar/list/main.css";
+//Login
+.login{
+    background: url(http://www.tennishalle-rohr.de/wp-content/uploads/2017/05/ball.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.box-login{
+    background-color: hsla(0, 0%, 80%, 0.3)!important;
+}
+
+//table
+.table th,td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.radio + .radio {
+  margin-left: 0.4em;
+}
+/*menu margin*/
+.menu-label:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+.menu-label:not(:first-child) {
+    margin-top: 0.5em;
+}
